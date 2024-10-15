@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 import 'package:task/list.dart';
 import 'package:task/main.dart';
- // Import your home screen
+
+const _primaryColor = Color(0x000000FF);
+// Import your home screen
 
 class SplashScreen extends StatefulWidget {
   @override
@@ -45,7 +47,7 @@ class _SplashScreenState extends State<SplashScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white, // Splash screen background color
+      backgroundColor: _primaryColor, // Splash screen background color
       body: Center(
         child: FadeTransition(
           opacity: _animation,
@@ -62,7 +64,7 @@ class _SplashScreenState extends State<SplashScreen>
                 style: TextStyle(
                   fontSize: 24,
                   fontWeight: FontWeight.bold,
-                  color: Colors.blue, // Text color
+                  color: _primaryColor, // Text color
                 ),
               ),
               SizedBox(height: 10),

@@ -24,6 +24,7 @@ flutter:
 
   assets:
     - assets/images/download.png  # Make sure to add your splash image here
+    - assets/images/fahad alsalem.jpg
 
 flutter_native_splash:
   color: "#ffffff" # Background color of the splash screen

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
+const _primaryColor = Color(0x000000FF);
+
 class BranchDetailPage extends StatelessWidget {
   final String branchName;
   final String address;
@@ -88,9 +90,24 @@ class BranchDetailPage extends StatelessWidget {
                 icon: const Icon(Icons.map),
                 label: const Text('Open in Google Maps'),
                 style: ElevatedButton.styleFrom(
-                  iconColor: const Color.fromARGB(255, 10, 95, 164), // Button color
+                  iconColor:
+                      const Color.fromARGB(255, 10, 95, 164), // Button color
                 ),
               ),
+              // ElevatedButton.icon(
+              //   onPressed: () => _launchMaps(googleMapsLocation),
+              //   icon: const Icon(Icons.map, color: _primaryColor), // White icon
+              //   label: const Text('Open in Google Maps',
+              //       style: TextStyle(color: Colors.white)), // White text
+              //   style: ElevatedButton.styleFrom(
+              //     iconColor:
+              //         Color.fromARGB(255, 10, 95, 164), // Blue background
+              //     shape: RoundedRectangleBorder(
+              //       borderRadius:
+              //           BorderRadius.circular(0.0), // Make the button square
+              //     ),
+              //   ),
+              // )
             ],
           ),
         ),
@@ -99,7 +116,8 @@ class BranchDetailPage extends StatelessWidget {
   }
 
   Future<void> _launchMaps(String location) async {
-    final Uri googleMapsUrl = Uri.parse('https://www.google.com/maps/search/?api=1&query=$location');
+    final Uri googleMapsUrl =
+        Uri.parse('https://www.google.com/maps/search/?api=1&query=$location');
     if (await canLaunch(googleMapsUrl.toString())) {
       await launch(googleMapsUrl.toString());
     } else {
